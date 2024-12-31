@@ -36,6 +36,12 @@ namespace MatrixProgrammer
 
         private void uploadButton_Click(object sender, EventArgs e)
         {
+            if (progressBar.Value != 0)
+            {
+                MessageBox.Show("An upload is already in progress");
+                return;
+            }
+            
             if (imageFilePath == "")
             {
                 MessageBox.Show("Please select an image file!");
